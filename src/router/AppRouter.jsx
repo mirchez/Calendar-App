@@ -8,7 +8,6 @@ export const AppRouter = () => {
 
   const { status, checkAuthToken } = useAuthStore()
 
-    //const authStatus = 'not-authenticated'
 
     useEffect( () =>{
         checkAuthToken()
@@ -24,7 +23,7 @@ export const AppRouter = () => {
     <div>
         <Routes>
             { 
-                (status) === 'not-authenticated'
+                (status === 'not-authenticated')
                 ? ( 
                     <>
                       <Route path="/auth/*" element={<LoginPage/>}/>

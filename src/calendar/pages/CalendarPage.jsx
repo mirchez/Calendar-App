@@ -3,15 +3,15 @@ import 'react-big-calendar/lib/css/react-big-calendar.css'
 
 import { CalendarEvent, CalendarModal, FabAddNew, FabDelete, Navbar } from "../"
 import { localizer } from '../../helpers'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useUiStore, useCalendarStore } from '../../hooks'
 
 
 export  const CalendarPage = () => {
   const { openDateModal } = useUiStore()
-  const {events, setActiveEvent} = useCalendarStore() 
+  const {events, setActiveEvent, startLoadingEvents} = useCalendarStore() 
   
-  const [lastView, setLastView] = useState( localStorage.getItem( 'lastView' ) || 'week' );
+  const [lastView, setLastView] = useState( localStorage.getItem( 'lastView' ) || 'month' );
 
   const eventStyleGetter = (event, start, end, isSelectec) =>{
     return {
@@ -37,6 +37,12 @@ export  const CalendarPage = () => {
     localStorage.setItem('lastView', e)
     setLastView(e)
   }
+
+  useEffect(() => {
+    startLoadingEvents() 
+  }, [])
+  
+  console.log({events})
   return (
     <>
         <Navbar/>
@@ -45,7 +51,7 @@ export  const CalendarPage = () => {
           culture='en-US' //should take the location of where the consumer is from and set respectively, in this case I'll use english
           localizer={localizer}
           events={ events }
-          defaultView={lastView}
+          view={lastView}
           startAccessor="start"
           endAccessor="end"
           style={{ height: '100dvh' }}

@@ -1,14 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const tempEvent = {
-  _id: new Date().getTime(),
+  id: "12342323",
     title: 'Boss Birthday',
     notes: 'Must buy a cake',
     start: new Date(2024, 9, 20, 10, 30),
     end: new Date(2024, 9, 20, 12, 0),
     bgColor: '#48e',
     user: {
-      _id: '123',
+      id: '123',
       name: 'John Doe',
     },
   }
@@ -16,6 +16,7 @@ const tempEvent = {
 export const calendarSlice = createSlice({
     name: 'calendar',
     initialState: { 
+        isLoadingEvents: true,
         events: [
             tempEvent
         ],
@@ -31,7 +32,7 @@ export const calendarSlice = createSlice({
       },
       onUploadNewEvent: (state, {payload}) => {
         state.events = state.events.map( event =>{
-          if ( event._id === payload._id) {
+          if ( event.id === payload.id) {
             return payload
           }
           return event
@@ -39,13 +40,21 @@ export const calendarSlice = createSlice({
       },
       onDeleteEvent: (state) => {
         if ( state.activeEvent ){
-          state.events = state.events.filter( event => event._id !== state.activeEvent._id)
+          state.events = state.events.filter( event => event.id !== state.activeEvent.id)
           state.activeEvent = null
         }
+      },
+      onLoadEvents: (state, {payload = []}) => {
+        state.isLoadingEvents = false
 
+        payload.forEach( event => {
+          const exist = state.events.some( (dbEvent) => dbEvent.id === event.id)
+          if (!exist) {
+            state.events.push(event)
+          }
+        })
       }
-
     },
 });
 
-export const {onSetActiveEvent, onAddNewEvent, onUploadNewEvent, onDeleteEvent  } = calendarSlice.actions;
+export const {onSetActiveEvent, onAddNewEvent, onUploadNewEvent, onDeleteEvent, onLoadEvents } = calendarSlice.actions;

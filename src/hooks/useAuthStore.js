@@ -11,11 +11,10 @@ export const useAuthStore = () => {
         dispatch( onChecking() ) 
         try {
             const { data } = await calendarApi.post('/auth/', { email, password })
-            console.log({ data })
 
             // Guardar el token en localStorage
-            localStorage.setItem('data', data.token)
-            localStorage.setItem('data-init-date', new Date().getTime())
+            localStorage.setItem('token', data.token)
+            localStorage.setItem('token-init-date', new Date().getTime())
 
             dispatch(onLogin({
                 name: data.name,
@@ -35,8 +34,8 @@ export const useAuthStore = () => {
             const { data } = await calendarApi.post('/auth/new', { email, password, name })
             console.log({ data })
 
-            localStorage.setItem('data', data.token)
-            localStorage.setItem('data-init-date', new Date().getTime())
+            localStorage.setItem('token', data.token)
+            localStorage.setItem('token-init-date', new Date().getTime())
 
             dispatch(onLogin({
                 name: data.name,
@@ -56,10 +55,10 @@ export const useAuthStore = () => {
         if(!token) return dispatch( onLogout())
         
         try {
-            const { data } = await calendarApi.post('/auth/renew')
+            const { data } = await calendarApi.get('/auth/renew')
 
-            localStorage.setItem('data', data.token)
-            localStorage.setItem('data-init-date', new Date().getTime())
+            localStorage.setItem('token', data.token)
+            localStorage.setItem('token-init-date', new Date().getTime())
 
             dispatch(onLogin({
                 name: data.name,
