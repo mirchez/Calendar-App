@@ -1,24 +1,24 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const tempEvent = {
-  id: "12342323",
-    title: 'Boss Birthday',
-    notes: 'Must buy a cake',
-    start: new Date(2024, 9, 20, 10, 30),
-    end: new Date(2024, 9, 20, 12, 0),
-    bgColor: '#48e',
-    user: {
-      id: '123',
-      name: 'John Doe',
-    },
-  }
+// const tempEvent = {
+//   id: "12342323",
+//     title: 'Boss Birthday',
+//     notes: 'Must buy a cake',
+//     start: new Date(2024, 9, 20, 10, 30),
+//     end: new Date(2024, 9, 20, 12, 0),
+//     bgColor: '#48e',
+//     user: {
+//       id: '123',
+//       name: 'John Doe',
+//     },
+//   }
 
 export const calendarSlice = createSlice({
     name: 'calendar',
     initialState: { 
         isLoadingEvents: true,
         events: [
-            tempEvent
+            //tempEvent
         ],
         activeEvent: null,
     },
@@ -53,8 +53,20 @@ export const calendarSlice = createSlice({
             state.events.push(event)
           }
         })
+      },
+      onLogoutCalendar: (state) => {
+        state.isLoadingEvents = true,
+        state.events = [],
+        state.activeEvent = null
       }
+
     },
 });
 
-export const {onSetActiveEvent, onAddNewEvent, onUploadNewEvent, onDeleteEvent, onLoadEvents } = calendarSlice.actions;
+export const {
+  onSetActiveEvent,
+  onAddNewEvent,
+  onUploadNewEvent,
+  onDeleteEvent,
+  onLoadEvents,
+  onLogoutCalendar } = calendarSlice.actions;
