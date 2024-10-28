@@ -1,0 +1,352 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test in <AppRouter/> should calendar page if user is authenticated 1`] = `
+<div>
+  <div>
+    <div
+      class="container login-container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-md-6 login-form-1 animate__animated animate__bounceInLeft"
+        >
+          <h3>
+            SignIn
+          </h3>
+          <form>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="form-control"
+                name="loginEmail"
+                placeholder="Email"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="form-control"
+                name="loginPassword"
+                placeholder="Password"
+                type="Password"
+                value=""
+              />
+            </div>
+            <div
+              class="d-grid gap-2"
+            >
+              <input
+                class="btnSubmit"
+                type="submit"
+                value="Login"
+              />
+            </div>
+          </form>
+        </div>
+        <div
+          class="col-md-6 login-form-2 animate__animated animate__bounceInRight "
+        >
+          <h3>
+            Register
+          </h3>
+          <form>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="form-control"
+                name="registerName"
+                placeholder="Name"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="form-control"
+                name="registerEmail"
+                placeholder="Email"
+                type="Email"
+                value=""
+              />
+            </div>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="form-control"
+                name="registerPassword"
+                placeholder="Password"
+                type="Password"
+                value=""
+              />
+            </div>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="form-control"
+                name="registerPassword2"
+                placeholder="Confirm your Password"
+                type="Password"
+                value=""
+              />
+            </div>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="btnSubmit"
+                type="submit"
+                value="Create Account"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test in <AppRouter/> should login page if user is not authenticated 1`] = `
+<div>
+  <div>
+    <div
+      class="container login-container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-md-6 login-form-1 animate__animated animate__bounceInLeft"
+        >
+          <h3>
+            SignIn
+          </h3>
+          <form>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="form-control"
+                name="loginEmail"
+                placeholder="Email"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="form-control"
+                name="loginPassword"
+                placeholder="Password"
+                type="Password"
+                value=""
+              />
+            </div>
+            <div
+              class="d-grid gap-2"
+            >
+              <input
+                class="btnSubmit"
+                type="submit"
+                value="Login"
+              />
+            </div>
+          </form>
+        </div>
+        <div
+          class="col-md-6 login-form-2 animate__animated animate__bounceInRight "
+        >
+          <h3>
+            Register
+          </h3>
+          <form>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="form-control"
+                name="registerName"
+                placeholder="Name"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="form-control"
+                name="registerEmail"
+                placeholder="Email"
+                type="Email"
+                value=""
+              />
+            </div>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="form-control"
+                name="registerPassword"
+                placeholder="Password"
+                type="Password"
+                value=""
+              />
+            </div>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="form-control"
+                name="registerPassword2"
+                placeholder="Confirm your Password"
+                type="Password"
+                value=""
+              />
+            </div>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="btnSubmit"
+                type="submit"
+                value="Create Account"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`test in <AppRouter/> should login page if user is not authenticated 2`] = `
+<div>
+  <div>
+    <div
+      class="container login-container"
+    >
+      <div
+        class="row"
+      >
+        <div
+          class="col-md-6 login-form-1 animate__animated animate__bounceInLeft"
+        >
+          <h3>
+            SignIn
+          </h3>
+          <form>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="form-control"
+                name="loginEmail"
+                placeholder="Email"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="form-control"
+                name="loginPassword"
+                placeholder="Password"
+                type="Password"
+                value=""
+              />
+            </div>
+            <div
+              class="d-grid gap-2"
+            >
+              <input
+                class="btnSubmit"
+                type="submit"
+                value="Login"
+              />
+            </div>
+          </form>
+        </div>
+        <div
+          class="col-md-6 login-form-2 animate__animated animate__bounceInRight "
+        >
+          <h3>
+            Register
+          </h3>
+          <form>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="form-control"
+                name="registerName"
+                placeholder="Name"
+                type="text"
+                value=""
+              />
+            </div>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="form-control"
+                name="registerEmail"
+                placeholder="Email"
+                type="Email"
+                value=""
+              />
+            </div>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="form-control"
+                name="registerPassword"
+                placeholder="Password"
+                type="Password"
+                value=""
+              />
+            </div>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="form-control"
+                name="registerPassword2"
+                placeholder="Confirm your Password"
+                type="Password"
+                value=""
+              />
+            </div>
+            <div
+              class="form-group mb-2"
+            >
+              <input
+                class="btnSubmit"
+                type="submit"
+                value="Create Account"
+              />
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

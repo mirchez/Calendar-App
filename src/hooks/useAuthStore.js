@@ -24,7 +24,7 @@ export const useAuthStore = () => {
             dispatch( onLogout("Not valid Credentials"))
             setTimeout(() => {
                 dispatch(clearErrorMessage())
-            },3000)
+            },10)
         }
     }
 
@@ -32,7 +32,6 @@ export const useAuthStore = () => {
         dispatch( onChecking() ) 
         try {
             const { data } = await calendarApi.post('/auth/new', { email, password, name })
-            console.log({ data })
 
             localStorage.setItem('token', data.token)
             localStorage.setItem('token-init-date', new Date().getTime())
@@ -41,6 +40,7 @@ export const useAuthStore = () => {
                 name: data.name,
                 uid: data.uid,
             }))
+            
         } catch (err) {
             dispatch( onLogout(err.response.data?.msg || 'There was an error'))
             setTimeout(() => {

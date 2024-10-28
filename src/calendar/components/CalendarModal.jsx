@@ -5,20 +5,23 @@ import DatePicker from "react-datepicker"
 import "react-datepicker/dist/react-datepicker.css"
 import Swal from "sweetalert2";
 import { useUiStore, useCalendarStore } from "../../hooks";
+import { getEnvVariables } from "../../helpers";
 
 
 const customStyles = {
     content: {
-      top: '50%',
-      left: '50%',
-      right: 'auto',
-      bottom: 'auto',
-      marginRight: '-50%',
-      transform: 'translate(-50%, -50%)',
+        top: '50%',
+        left: '50%',
+        right: 'auto',
+        bottom: 'auto',
+        marginRight: '-50%',
+        transform: 'translate(-50%, -50%)',
     },
-  };
+}
+    if( getEnvVariables().VITE_MODE !== 'test'){
+        Modal.setAppElement('#root')
+    }
 
-  Modal.setAppElement('#root');
 
 export const CalendarModal = () => {
 
