@@ -78,7 +78,7 @@ export const LoginPage = () => {
                 className="form-control"
                 placeholder="Password"
                 name="loginPassword"
-                value="131320m"
+                value="adminpass"
                 onChange={onLoginInputChange}
               />
             </div>
